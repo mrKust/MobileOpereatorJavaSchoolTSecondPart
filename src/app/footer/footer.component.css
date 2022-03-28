@@ -1,0 +1,9 @@
+strong {
+  background-color: lawngreen;
+  padding: 20px;
+  width : 100%;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
