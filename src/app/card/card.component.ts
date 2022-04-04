@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Card} from "../app.component";
-import {Tariff} from "../tariff/tariff.model";
+/*import {Card} from "../app.component";*/
+import {TariffsResponse} from "../tariff/tariffs-response.model";
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-card',
@@ -9,9 +10,17 @@ import {Tariff} from "../tariff/tariff.model";
 })
 export class CardComponent implements OnInit{
 
-  @Input() card: Tariff
+  /*@Input() card: Tariff*/
 
 
-  ngOnInit(): void {}
+  response: TariffsResponse = {data: []};
+
+  constructor(private dataServ: DataService) { }
+
+  ngOnInit(): void {
+    this.dataServ.getTariffs().subscribe((dataFromService) => {
+      this.response = dataFromService;
+    })
+  }
 
 }

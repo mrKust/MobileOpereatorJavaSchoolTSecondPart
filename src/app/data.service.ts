@@ -7,8 +7,7 @@ import { TariffsResponse } from 'src/app/tariff/tariffs-response.model';
   providedIn: 'root'
 })
 export class DataService {
-  private DATA_URL = 'http://localhost:8080/api/tariffsInfo';
-  //private DATA_URL = 'https://reqres.in/api/users';
+  private DATA_URL = 'http://localhost:8081/api/tariffsInfo';
 
   constructor(private http: HttpClient) { }
 

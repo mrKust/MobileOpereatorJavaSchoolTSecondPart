@@ -1,20 +1,3 @@
 <app-header></app-header>
-<div class="container">
-  <h1>Available tariffs</h1>
-  <ul *ngIf="response; else sorry">
-    <li *ngFor="let tariff of response.data">
-      <p>{{ tariff.tariff_name }} {{ tariff.tariff_price }}</p>
-    </li>
-  </ul>
-  <!--<ul *ngIf="response; else sorry">
-      <li *ngFor="let tariff of response.data">
-        <app-card
-          [card]="tariff"
-        ></app-card>
-      </li>
-  </ul>-->
-  <ng-template #sorry>
-    <p>Sorry :(</p>
-  </ng-template>
-</div>
+<app-card></app-card>
 <app-footer></app-footer>
