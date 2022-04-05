@@ -1,20 +1,26 @@
-<div class="card">
+<div class="container">
   <ul *ngIf="response; else sorry">
+    <script>let index = 0;</script>
     <li *ngFor="let tariff of response">
-      <h3>
-        {{ tariff.tariff_name }}
-        <small class="text-muted">${{ tariff.tariff_price }}</small>
-      </h3>
+
+      <div class="card">
+        <h3>
+          {{ tariff.tariff_name }}
+          <small class="text-muted">${{ tariff.tariff_price }}</small>
+        </h3>
+        <ul>
+          <li *ngFor="let option of tariff.connectedOptions">
+            <h5 class="inline">{{option.options_category}} {{option.options_name}}</h5>
+            <p class="inline">Price: {{option.options_price}} Cost to add: {{option.options_costToAdd}}</p>
+          </li>
+        </ul>
+      </div>
+      <br>
     </li>
-  </ul>
+    </ul>
 
   <ng-template #sorry>
     <p>Sorry :(</p>
   </ng-template>
-  <!--<h3>
-    {{ .tariff_name }}
-    <small class="text-muted">${{ card.tariff_price }}</small>
-  </h3>-->
 </div>
-<br>
 

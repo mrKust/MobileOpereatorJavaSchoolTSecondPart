@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-/*import {Card} from "../app.component";*/
-import {TariffsResponse} from "../tariff/tariffs-response.model";
 import {DataService} from "../data.service";
 import {Tariff} from "../tariff/tariff.model";
 
@@ -10,8 +8,6 @@ import {Tariff} from "../tariff/tariff.model";
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit{
-
-  /*@Input() card: Tariff*/
 
 
   response: Tariff[];
