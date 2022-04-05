@@ -1,6 +1,6 @@
 <div class="card">
   <ul *ngIf="response; else sorry">
-    <li *ngFor="let tariff of response.data">
+    <li *ngFor="let tariff of response">
       <h3>
         {{ tariff.tariff_name }}
         <small class="text-muted">${{ tariff.tariff_price }}</small>
