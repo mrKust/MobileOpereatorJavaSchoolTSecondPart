@@ -15,11 +15,11 @@ export class CardComponent implements OnInit{
   constructor(private dataServ: DataService) { }
 
   ngOnInit(): void {
-    this.dataServ.getTariffs().subscribe((dataFromService) => {
-      console.log(dataFromService);
-      this.response = dataFromService;
-      console.log(this.response);
-    })
+    console.log('card.component started here');
+    this.dataServ.ws.onmessage = ev => {
+      this.response = JSON.parse(ev.data);
+    }
+    console.log('card.component ended here');
   }
 
 }
