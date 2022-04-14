@@ -5,13 +5,14 @@
 
       <div class="card">
         <h3>
-          {{ tariff.tariff_name }}
-          <small class="text-muted">${{ tariff.tariff_price }}</small>
+          Tariff: {{ tariff.tariff_name }}
+          <small class="text-muted">Monthly fee: ${{ tariff.tariff_price }}</small>
         </h3>
         <ul>
+          <h4>Options available for this tariff</h4>
           <li *ngFor="let option of tariff.connectedOptions">
-            <h5 class="inline">{{option.options_category}} {{option.options_name}}</h5>
-            <p class="inline">Price: {{option.options_price}} Cost to add: {{option.options_costToAdd}}</p>
+            <h5 class="inline">Option: {{option.options_category}} {{option.options_name}}</h5>
+            <p class="inline">Monthly fee: {{option.options_price}} Price to add: {{option.options_costToAdd}}</p>
           </li>
         </ul>
       </div>
